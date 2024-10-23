@@ -52,14 +52,14 @@ container.insertAdjacentHTML('beforeend', createMarkup(images));
 function createMarkup(arrayOfImages) {
   return arrayOfImages
     .map(
-      image => `
+      ({ preview, original, description }) => `
   <li class="gallery-item">
-   <a class="gallery-link" href="${image.original}">
+   <a class="gallery-link" href="${original}">
     <img
       class="gallery-image"
-      src="${image.preview}"
-      data-source="${image.original}"
-      alt="${image.description}"
+      src="${preview}"
+      data-source="${original}"
+      alt="${description}"
       width="360px"
       height="200px"
     />
@@ -69,10 +69,6 @@ function createMarkup(arrayOfImages) {
     )
     .join('');
 }
-
-container.addEventListener('click', handleClick);
-
-function handleClick() {}
 
 container.addEventListener('click', handleClick);
 //////////////////////////////////////////////
