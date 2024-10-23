@@ -71,3 +71,23 @@ function createMarkup(arrayOfImages) {
 
 container.addEventListener('click', handleClick);
 function handleClick() {}
+
+container.addEventListener('click', handleClick);
+
+function handleClick(event) {
+  if (event.target.nodeName !== 'IMG') {
+    return;
+  }
+
+  //console.log(  event.target.dataset.source );
+
+  const instance = basicLightbox.create(`
+    <img
+      class="modal"
+      src="${event.target.dataset.source}"
+      
+    />
+`);
+
+  instance.show();
+}
