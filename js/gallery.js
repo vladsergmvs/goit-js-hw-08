@@ -68,3 +68,6 @@ function createMarkup(arrayOfImages) {
     )
     .join('');
 }
+
+container.addEventListener('click', handleClick);
+function handleClick() {}
