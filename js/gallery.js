@@ -60,32 +60,32 @@ function createMarkup(arrayOfImages) {
       src="${image.preview}"
       data-source="${image.original}"
       alt="${image.description}"
+      width="360px"
+      height="200px"
     />
   </a>
 </li>
-
         `
     )
     .join('');
 }
 
 container.addEventListener('click', handleClick);
+
 function handleClick() {}
 
 container.addEventListener('click', handleClick);
-
+//////////////////////////////////////////////
 function handleClick(event) {
   if (event.target.nodeName !== 'IMG') {
     return;
   }
-
+  event.preventDefault();
   //console.log(  event.target.dataset.source );
-
   const instance = basicLightbox.create(`
     <img
       class="modal"
-      src="${event.target.dataset.source}"
-      
+      src="${event.target.dataset.source}"    
     />
 `);
 
